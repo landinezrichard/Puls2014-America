@@ -2,8 +2,10 @@
 <html lang="es">
 	<head>
 		<meta charset="utf-8" />
+		<meta name="description" content="Aplicación del Curso de Diseño Web Online 2014 Mejorando.la"/>
 		<title>Puls2014</title>
-		
+		<link rel="stylesheet" type="text/css" href="../static/css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/estilos.css">
 	</head>
 	<body>
 		<header class="Header">
@@ -13,85 +15,86 @@
 			<h1 class="Header-title">Titulo pag Web</h1>
 			<figure class="Header-avatarContainer">
 				<img class="Header-avatar" src="../static/images/avatar.png"/>
-			</figure>
-			<nav class="MainMenu">
-				<ul class="MainMenu-list">
-					<li class="MainMenu-item">
-						<a class="MainMenu-link" href="#">
-							Python
-						</a>
-					</li>
-					<li class="MainMenu-item">
-						<a class="MainMenu-link" href="#">
-							HTML5
-						</a>
-					</li>
-					<li class="MainMenu-item">
-						<a class="MainMenu-link" href="#">
-							JavaScript
-						</a>
-					</li>
-					<li class="MainMenu-item">
-						<a class="MainMenu-link" href="#">
-							CSS3
-						</a>
-					</li>
-					<li class="MainMenu-item">
-						<a class="MainMenu-link" href="#">
-							Django
-						</a>
-					</li>
-					<li class="MainMenu-item">
-						<a class="MainMenu-link" href="#">
-							Publicar
-						</a>
-					</li>
-				</ul>
-			</nav>	
+			</figure>				
 		</header>
+		<nav class="MainMenu">
+			<ul class="MainMenu-list">
+				<li class="MainMenu-item">
+					<a class="MainMenu-link" href="#">
+						Python
+					</a>
+				</li>
+				<li class="MainMenu-item">
+					<a class="MainMenu-link" href="#">
+						HTML5
+					</a>
+				</li>
+				<li class="MainMenu-item">
+					<a class="MainMenu-link" href="#">
+						JavaScript
+					</a>
+				</li>
+				<li class="MainMenu-item">
+					<a class="MainMenu-link" href="#">
+						CSS3
+					</a>
+				</li>
+				<li class="MainMenu-item">
+					<a class="MainMenu-link" href="#">
+						Django
+					</a>
+				</li>
+				<li class="MainMenu-item is-button">
+					<a class="MainMenu-link is-linkButton" href="#">
+						Publicar
+					</a>
+				</li>
+			</ul>
+		</nav>
 		<section class="Contenido">
 			<article class="Contenido-item">
-				<figure class="Contenido-imageContainer">
-					<img class="Contenido-image" src="../static/images/imagen.jpg"/>
+				<figure class="Contenido-itemImageContainer">
+					<img class="Contenido-itemImage" src="../static/images/imagen.jpg"/>
 				</figure>
-				<h2 class="Contenido-title">
-					<a href="#">
+				<h2 class="Contenido-itemTitle">
+					<a class="Contenido-itemTitleLink" href="#">
 						Titulo Articulo
 					</a>	
 				</h2>
-				<p class="Contenido-autor">
+				<p class="Contenido-itemAutor">
 					por 
-					<a class="Contenido-autorLink" href="#">
+					<a class="Contenido-itemAutorLink" href="#">
 						Autor
 					</a>
 				</p>
-				<div class="Contenido-acciones">
-					<a class="Contenido-categoria" href="#">
+				<div class="Contenido-itemAcciones">
+					<a class="Contenido-itemCategoria" href="#">
 						Boton Categoria
 					</a>
-					<p class="Contenido-fecha">
+					<p class="Contenido-itemFecha">
 						Hace 
 						<strong>
 							5
 						</strong>
 						 minutos
 					</p>					
-					<a class="Contenido-comentarios" href="#">
+					
+				</div>
+				<div class="Contenido-itemVotacion">
+					<a class="Contenido-itemUp" href="#">
+						U
+					</a>
+					Numero
+					<a class="Contenido-itemDown" href="#">
+						D
+					</a>
+					<a class="Contenido-itemComentarios" href="#">
 						Numero comentarios
 					</a>					
-					<a class="Contenido-star" href="#">
+					<a class="Contenido-itemStar" href="#">
 						estrella
 					</a>
 				</div>
-				<p class="Contenido-votacion">
-					<a class="Contenido-up" href="#">
-						Up
-					</a>
-					Numero
-					<a class="Contenido-down" href="#">
-						Down
-					</a>
-				</p>
 			</article>
 		</section>
 		<footer class="Footer">
