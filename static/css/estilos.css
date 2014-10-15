@@ -1,3 +1,56 @@
+/*ICONOS COMO FUENTES*/
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?-pg6ywd');
+	src:url('../fonts/icomoon.eot?#iefix-pg6ywd') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?-pg6ywd') format('woff'),
+		url('../fonts/icomoon.ttf?-pg6ywd') format('truetype'),
+		url('../fonts/icomoon.svg?-pg6ywd#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-comment:before {
+	content: "\f02b";
+}
+.icon-star:before {
+	content: "\f02a";
+	color: #FFBE2C;
+	margin-right: 0.4em;	
+	font-size: 1.4em;
+}
+.icon-triangle-down:before {
+	content: "\f05b";
+	color: #DD4F24;
+	font-size: 1.4em;
+}
+.icon-triangle-up:before {
+	content: "\f0aa";
+	color: #33b66a;
+	position: relative;
+	top: 0.2em;
+	font-size: 1.4em;	
+}
+.icon-pen:before {
+	content: "\e600";
+}
+
+
 /*COLOR DE FONDO DE PAGINA*/
 body{
 	background: #EEEEEE;
@@ -22,14 +75,27 @@ body{
 .Header-logoContainer{
 	float: left;
 	margin: 0;
-}
-
-.Header-logo{
-	width: 52px;
 	border-right: 1px solid white;
 	padding-right: 0.5em;
 	margin-right: 0.5em;
 }
+
+.Header-logo{
+	width: 52px;
+	transition: 1s;
+	-webkit-transition:1s;
+	-moz-transition:1s;
+	-o-transition:1s;
+	-ms-transition:1s;
+}
+
+.Header-logo:hover{
+	transform: rotate(-355deg);
+	-webkit-transform:rotate(-355deg);
+	-moz-transform:rotate(-355deg);
+	-o-transform:rotate(-355deg);		
+	-ms-transform:rotate(-355deg);
+}	
 
 .Header-title{
 	color: white;
@@ -65,7 +131,7 @@ body{
 
 .MainMenu{
 	background: #80BCA3;
-	padding: 0 0.5em;
+	padding: 0 6em 0 0;
 	position: relative;
 }
 
@@ -83,8 +149,17 @@ body{
 	color: white;
 	text-decoration: none;
 	display: block;
-	padding: 0.5em 0;		
+	padding: 0.5em;
+	transition: .3s;
+	-webkit-transition:.3s;
+	-moz-transition:.3s;
+	-o-transition:.3s;
+	-ms-transition:.3s;		
 }
+
+.MainMenu-link:hover{
+	background: #343B54;
+}	
 
 /*Estados para identificar el ultimo boton del menu*/
 
@@ -101,6 +176,10 @@ body{
 	font-style: italic;
 	text-shadow:rgba(0,0,0,0.5) 2px 2px 5px;
 	box-shadow:rgba(0,0,0,0.5) 5px 5px 20px;
+}
+
+.is-linkButton:hover{
+	background: #F4502A;
 }
 
 /*COMPONENTE CONTENIDO*/
@@ -130,7 +209,8 @@ body{
 .Contenido-itemTitle{
 	font-size: 1.2em;
 	font-style: italic;
-	padding: 1em 1em 0 0; 
+	padding: 1em 1em 0 0;
+	margin: 0; 
 }
 
 .Contenido-itemTitleLink{
@@ -140,6 +220,7 @@ body{
 
 .Contenido-itemAutor{
 	color: #AAA;
+	margin: 0;
 }
 
 .Contenido-itemAutorLink{
@@ -147,9 +228,9 @@ body{
 	text-decoration: none;
 }
 
-.Contenido-itemAcciones{
-	text-align: right;
-	margin: 1em 1em 0 0;
+.Contenido-itemDatos{
+	text-align: right;	
+	margin: 1em 1em 0 0;	
 }
 
 .Contenido-itemCategoria{
@@ -164,15 +245,15 @@ body{
 /*Revisar estos*/
 .Contenido-itemFecha{
 	color: #AAA;
-	display: inline-block;
+	display: inline;
 	margin: 0;
 }
 
 .Contenido-itemVotacion{
 	position: absolute;	
 	top: 100%;
-	left: 5%;
-	right: 5%;
+	left: 2%;
+	right: 2%;
 	background: white;
 	width: 90%;
 	margin-top: 3px;
@@ -183,6 +264,13 @@ body{
 .Contenido-itemComentarios,
 .Contenido-itemStar{
 	float: right;
+}
+
+.Contenido-itemComentarios,
+.Contenido-itemStar,
+.Contenido-itemUp,
+.Contenido-itemDown{
+	text-decoration: none;
 }
 
 /*COMPONENTE PIE DE PÁGINA*/
@@ -208,4 +296,27 @@ body{
 
 .Footer-Copy:after{
 	content: " -";
+}
+
+/*ESTILOS RESPONSIVE DESIGN*/
+
+@media screen and (min-width:800px){	
+
+	.Contenido{
+		overflow: hidden;
+	}
+
+	/*Le damos a los items un ancho de 49% para armar dos columnas 
+	en la pagina*/
+	.Contenido-item{
+		width: 49%;
+		float: left;
+	}
+
+	/*Seleccionamos los items impares, para escoger solamente los 
+	items que se ubican en la 1era columna y les agregamos un margen
+	 derecho, para separarlos de los items de la 2da columna*/
+	.Contenido-item:nth-child(odd){
+		margin-right: 2%;
+	}	
 }	
