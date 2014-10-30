@@ -22,7 +22,7 @@
 
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	-moz-osx-font-smoothing: grayscale;	
 }
 
 .icon-comment:before {
@@ -30,8 +30,7 @@
 }
 .icon-star:before {
 	content: "\f02a";
-	color: #FFBE2C;
-	margin-right: 0.4em;	
+	color: #FFBE2C;		
 	font-size: 1.4em;
 }
 .icon-triangle-down:before {
@@ -260,17 +259,58 @@ body{
 	padding: 0.2em 0.5em;
 	border-radius: 0 0 0.5em 0.5em;
 }
-
+/*
 .Contenido-itemComentarios,
 .Contenido-itemStar{
 	float: right;
 }
-
+*/
 .Contenido-itemComentarios,
 .Contenido-itemStar,
 .Contenido-itemUp,
 .Contenido-itemDown{
 	text-decoration: none;
+}
+
+/*Con estos estilos agregamos la cajita gris tipo bocadillo de comic*/
+.Contenido-itemComentarios
+{
+	background: #878787;
+	border-radius: 4px;
+	color: white;
+	margin: 0 0.2em 0 0;
+	padding: 4px;
+	position: absolute;
+	top: 0;
+	right: 2em;
+	text-decoration: none;
+}
+
+/*
+	Agregandole a la caja gris con bordes redondeados, un contenido vacio 
+	(content:"") despues de la caja (:after), y aplicandole bordes superior 
+	del color de la caja, y bordes laterales (der/izq) transparentes se crea 
+	el efecto de un triangulo 
+*/
+
+.Contenido-itemComentarios:after
+{
+	border-left: 5px solid transparent;
+	/*border-right: 5px solid transparent;*/
+	border-top: 5px solid #878787;
+	content: "";
+	left: 10px;
+	position: absolute;
+	top: 100%;
+}
+
+.Contenido-itemStar
+{
+	float: right;	
+	position: absolute;
+	right: 0.2em;
+	top: 0.2em;
+	margin-right: 0.2em;
 }
 
 /*COMPONENTE PIE DE PÁGINA*/
